@@ -1,0 +1,28 @@
+I"Ä(function() {
+  $(document).ready(function() {
+    var setXeditable;
+    $.fn.editable.defaults.mode = {
+      orientation: "bottom auto"
+    };
+    setXeditable = function() {
+      return $("[data-xeditable=true]").each(function() {
+        return $(this).editable({
+          ajaxOptions: {
+            type: "PUT",
+            dataType: "json"
+          },
+          params: function(params) {
+            var railsParams;
+            railsParams = {};
+            railsParams[$(this).data("model")] = {};
+            railsParams[$(this).data("model")][params.name] = params.value;
+            return railsParams;
+          }
+        });
+      });
+    };
+    return setXeditable();
+  });
+
+}).call(this);
+:ET

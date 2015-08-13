@@ -1,0 +1,37 @@
+<div class='tasks'>
+  <div class='hovering' id="task_<%= task.id %>">
+
+    <span class="trash-icon">
+      <%= link_to user_task_path(current_user, task.id), method: :delete,
+        data: { confirm: 'Are you sure?' }, remote: true do %>
+        <i class="glyphicon glyphicon-trash"></i>
+      <% end %>
+    </span>
+
+     <span class ="checkbox">
+       <input type="checkbox" class='check' onclick="pressing(this);" data-id="<%= task.id %>" data-user-id="<%= current_user.id %>" data-complete="<%= task.complete %>" >
+     </span>
+
+    <span class="title">
+      <a href="#" data-xeditable="true" data-showButtons='false' data-pk="task" id='task' data-model='task' data-name='title' data-url="/users/<%= current_user.id %>/tasks/<%= task.id %>" data-title="Enter title">
+      <%= task.title %>
+      </a>
+    </span>
+
+    <br>
+
+    <i>due date:</i>
+
+    <a href="#" data-type='date' data-showButtons='false' data-mode="popup" data-placement="bottom" data-format ='yyyy-mm-dd' placement='right' data-xeditable='true' data-pk='task' data-model='task' data-name='due_date' data-url="/users/<%= current_user.id %>/tasks/<%= task.id %>">
+      <i><%= task.due_date || Date.today %></i>
+    </a>
+
+   <i>priority:</i>
+
+    <a href="#" data-xeditable="true" data-showButtons='false' data-pk="task" data-tpl="<input type='text' style='width: 65px'>" data-model='task' data-name='priority' data-url="/users/<%= current_user.id %>/tasks/<%= task.id %>" data-title="Enter title">
+      <%= task.priority %>
+    </a>
+
+  </div>
+</div>
+

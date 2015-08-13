@@ -1,0 +1,11 @@
+require 'spec_helper'
+
+describe Task do
+  describe 'instantiation' do
+    let!(:task) { build(:task) }
+
+    it 'instantiates a list' do
+      expect(task.class.name).to eq("Task")
+    end
+  end
+end

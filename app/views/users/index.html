@@ -1,0 +1,30 @@
+<h3>Users database</h3>
+
+<table>
+
+<% @users.each do |user| %>
+<tr id="user_<%= user.id %>">
+
+    <td>
+      <b>First Name:</b>
+      <i> <%= link_to user.first_name, user_tasks_path(user) %></i>
+    </td>
+
+    <td>
+      <b>Last Name: </b><i><%= link_to user.last_name, user_tasks_path(user) %></i>
+    </td>
+
+    <td>
+      <%= link_to 'Edit', edit_user_path(user) %>
+    </td>
+
+    <td>
+      <%= link_to 'Delete', user, data: { confirm: 'Are you sure?' },
+           method: :delete, remote: true %></td>
+    </tr>
+
+<% end %>
+
+<td><%= link_to 'Create user', new_user_path %></td>
+
+</table>

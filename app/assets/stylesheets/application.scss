@@ -1,0 +1,152 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *
+ *= require bootstrap3-editable/bootstrap-editable
+ *= require bootstrap-datepicker3
+ *= require_tree .
+ */
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+
+.hovering i::before {
+  display: none;
+}
+
+.hovering:hover i::before {
+  display: inline-block;
+}
+
+html {
+  position: absolute;
+  width: 800px;
+  background-color: #7D7DF3;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.separator {
+  color: #239623;
+}
+
+.separator .completed {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.separator div {
+  float: left;
+}
+
+.separator .line {
+  height: 21px;
+  margin-left: 15px;
+  width: 555px;
+  border-bottom: 1px solid #239623;
+}
+
+#content {
+  width: 800px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+.hovering {
+  position: relative;
+  height: 60px;
+}
+
+.clear{
+  clear: both;
+}
+
+#user_header{
+  float: right;
+}
+
+.completed-tasks {
+  margin-top: 15px;
+}
+
+.sort{
+  float: right;
+}
+
+#all-tasks{
+  margin-top: 15px;
+}
+
+.trash-icon{
+  float: left;
+  width: 15px;
+  margin-top: 2px;
+}
+
+.checkbox{
+  float: left;
+  margin: 7px 10px 10px 10px;
+}
+
+.title{
+  display: inline-block;
+  font-size: 18px;
+  height: 25px;
+}
+
+.completed-tasks .title{
+  display: inline-block;
+  font-size: 18px;
+  height: 25px;
+  text-decoration: line-through;
+}
+
+.password{
+  margin-top: 10px;
+}
+
+.submit{
+  margin-top: 10px;
+}
+
+.links{
+  float: right;
+}
+
+.button{
+  margin-top: 25px;
+}
+
+.alert{
+  color: red;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.error_messages{
+  border: 3px solid red;
+}
+
+.error_messages h2{
+  background-color: red;
+  color: white;
+  margin: 0;
+  padding: 5px;
+}
+
